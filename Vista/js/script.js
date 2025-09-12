@@ -17,9 +17,3 @@ window.onscroll = () =>{
    if(navbar) navbar.classList.remove('active');
 }
 
-// Ocultar loader al cargar la página
-window.onload = () => {
-   setTimeout(() => {
-      document.querySelector('.loader').style.display = 'none';
-   }, 1000); // 1000 milisegundos = 1 segundo
-}

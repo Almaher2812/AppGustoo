@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="stylesheet" href="css/loader.css">
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,11 @@
 
 </head>
 <body>
+   <div class="loader-container">
+   <img class="loader-img" src="images/loader.gif" alt="Cargando...">
+   </div>
+
+   <div class="contenido">
    
 <header class="header">
 
@@ -31,7 +37,7 @@
       <input type="email" required maxlength="50" name="email" placeholder="enter your email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" required maxlength="20" name="pass" placeholder="enter your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <a href="ini_clientes.html" class="btn">Iniciar sesion</a>
-      <p>todavia no tienes una cuenta? <a href="register.html">Registrarse</a></p>
+      <p>todavia no tienes una cuenta? <a href="registro_clien.html">Registrarse</a></p>
    </form>
 
 </section>
@@ -43,12 +49,7 @@
    <div class="credit">&copy; by <span>web app gusto</span> | all rights reserved!</div>
 
 </footer>
-
-<div class="loader">
-   <img src="images/loader.gif" alt="">
 </div>
-
 <script src="js/script.js"></script>
-
 </body>
 </html>
