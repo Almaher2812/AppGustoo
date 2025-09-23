@@ -21,34 +21,32 @@
 
    <div class="contenido">
    
-<header class="header">
+   <header class="header">
 
-   <section class="flex">
+      <section class="flex">
 
-      <a href="log_cliente.html" class="logo">APP GUSTO</a>
+         <a href="log_cliente.html" class="logo">APP GUSTO</a>
+      </section>
+
+   </header>
+
+   <section class="form-container">
+
+      <form action="" method="post">
+         <h3>Inicio de sesion</h3>
+         <input type="email" required maxlength="50" name="email" placeholder="enter your email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="password" required maxlength="20" name="pass" placeholder="enter your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+         <a href="ini_clientes.html" class="btn">Iniciar sesion</a>
+         <p>todavia no tienes una cuenta? <a href="registro_clien.html">Registrarse</a></p>
+      </form>
+
    </section>
 
-</header>
+   <footer class="footer">
 
-<section class="form-container">
+      <div class="credit">&copy; by <span>web app gusto</span> | all rights reserved!</div>
 
-   <form action="" method="post">
-      <h3>Inicio de sesion</h3>
-      <input type="email" required maxlength="50" name="email" placeholder="enter your email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" required maxlength="20" name="pass" placeholder="enter your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <a href="ini_clientes.html" class="btn">Iniciar sesion</a>
-      <p>todavia no tienes una cuenta? <a href="registro_clien.html">Registrarse</a></p>
-   </form>
-
-</section>
-
-<footer class="footer">
-
-   
-
-   <div class="credit">&copy; by <span>web app gusto</span> | all rights reserved!</div>
-
-</footer>
+   </footer>
 </div>
 <script src="js/script.js"></script>
 </body>
