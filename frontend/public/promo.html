@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Editar Promociones - APP GUSTO</title>
+
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      /* Estilos adicionales específicos para la página de editar promociones */
+      .edit-promotions {
+         padding: 20px;
+         max-width: 800px;
+         margin: 0 auto;
+      }
+
+      .edit-promotions form {
+         margin-top: 20px;
+      }
+
+      .edit-promotions form .form-group {
+         margin-bottom: 20px;
+      }
+
+      .edit-promotions form label {
+         display: block;
+         font-weight: bold;
+         margin-bottom: 5px;
+      }
+
+      .edit-promotions form input[type="text"],
+      .edit-promotions form input[type="file"],
+      .edit-promotions form button {
+         width: 100%;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         box-sizing: border-box;
+      }
+
+      .edit-promotions form button {
+         background-color: #333;
+         color: #fff;
+         cursor: pointer;
+      }
+
+      .edit-promotions form button:hover {
+         background-color: #555;
+      }
+   </style>
+
+</head>
+<body>
+   
+   <header class="header">
+
+      <section class="flex">
+   
+         <a href="ini_admin.html" class="logo">APP GUSTO</a>
+   
+         <nav class="navbar">
+            <a href="ini_admin.html">Inicio</a>
+            <a href="menu_admin.html">Menu</a>
+            <a href="reservas.html">Reserva</a>
+            <a href="contact_clientes.html">Contacto</a>
+         </nav>
+   
+         <div class="icons">
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+         </div>
+   
+         <div class="profile">
+            <p class="name">shaikh anas</p>
+            <div class="flex">
+               <a href="profile2.html" class="btn">profile</a>
+               <a href="#" class="delete-btn">logout</a>
+            </div>
+         </div>
+      </section>
+   
+   </header>
+
+<!-- Contenido principal -->
+<main class="edit-promotions">
+   <h1>Editar Promociones</h1>
+   <form id="addPromotionForm">
+      <div class="form-group">
+         <label for="promotionName">Nombre de la Promoción:</label>
+         <input type="text" id="promotionName" name="promotionName" required>
+      </div>
+      <div class="form-group">
+         <label for="promotionImage">Imagen de la Promoción:</label>
+         <input type="file" id="promotionImage" name="promotionImage" accept="image/*" required>
+      </div>
+      <button type="submit" class="btn">Agregar al Inicio</button>
+   </form>
+</main>
+
+<!-- Pie de página -->
+<footer class="footer">
+   <section class="box-container">
+      <div class="box">
+         <img src="images/email-icon.png" alt="">
+         <h3>Nuestro correo electrónico</h3>
+         <a href="mailto:shaikhanas@gmail.com">alejandromateus2812@gmail.com</a>
+      </div>
+      <div class="box">
+         <img src="images/clock-icon.png" alt="">
+         <h3>Horario de apertura</h3>
+         <p>De 07:00 am a 10:00 pm</p>
+      </div>
+      <div class="box">
+         <img src="images/map-icon.png" alt="">
+         <h3>Nuestra dirección</h3>
+         <a href="https://www.google.com/maps">Colombia</a>
+      </div>
+      <div class="box">
+         <img src="images/phone-icon.png" alt="">
+         <h3>Nuestro número</h3>
+         <a href="tel:1234567890">310 2500664</a>
+      </div>
+   </section>
+   <div class="credit">&copy; Derechos de autor 2022 por <span>Web App Gusto</span> | ¡Todos los derechos reservados!</div>
+</footer>
+
+<!-- Cargador -->
+
+   <img src="images/loader.gif" alt="">
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+document.getElementById("addPromotionForm").addEventListener("submit", function(event) {
+   event.preventDefault();
+   // Aquí puedes agregar el código para manejar el envío del formulario
+   // Por ejemplo, obtener los valores de los campos y enviarlos a través de AJAX
+   // Una vez que la promoción se haya agregado exitosamente, puedes realizar alguna acción adicional, como mostrar un mensaje de éxito o actualizar la lista de promociones.
+});
+</script>
+
+</body>
+</html>
+

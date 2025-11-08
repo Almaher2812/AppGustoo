@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="css/loader.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Iniciar sesion</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   <div class="loader-container">
+   <img class="loader-img" src="images/loader.gif" alt="Cargando...">
+   </div>
+
+   <div class="contenido">
+   
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="log_cliente.html" class="logo">APP GUSTO</a>
+      </section>
+
+   </header>
+
+   <section class="form-container">
+
+      <form action="" method="post">
+         <h3>Inicio de sesion</h3>
+         <input type="email" required maxlength="50" name="email" placeholder="enter your email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="password" required maxlength="20" name="pass" placeholder="enter your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+         <a href="ini_clientes.html" class="btn">Iniciar sesion</a>
+         <p>todavia no tienes una cuenta? <a href="registro_clien.html">Registrarse</a></p>
+      </form>
+
+   </section>
+
+   <footer class="footer">
+
+      <div class="credit">&copy; by <span>web app gusto</span> | all rights reserved!</div>
+
+   </footer>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

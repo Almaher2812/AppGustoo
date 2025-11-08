@@ -1,0 +1,234 @@
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- NAVBAR ---------- */
+header {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  color: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1,
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffa500;
+  text-transform: uppercase;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+header nav a:hover {
+  color: #ffa500;
+  transform: scale(1.05);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background: white;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.hero:hover {
+  transform: translateY(-4px);
+}
+
+.hero-text {
+  max-width: 50%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.hero-text button {
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.hero-text button:hover {
+  background: linear-gradient(45deg, #ffb300, #ff7043);
+  transform: scale(1.05);
+}
+
+.hero img {
+  max-width: 45%;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- INFO SECTION ---------- */
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-card i {
+  font-size: 32px;
+  color: #ff9800;
+  margin-bottom: 12px;
+}
+
+.info-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.info-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 35px 15px;
+  margin-top: 60px;
+}
+
+footer span {
+  color: #ffa500;
+  font-weight: 600;
+}
+
+footer p {
+  font-size: 15px;
+  margin-top: 5px;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero img {
+    max-width: 85%;
+    margin-top: 25px;
+  }
+
+  header nav ul {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .info {
+    padding: 0 20px;
+  }
+}

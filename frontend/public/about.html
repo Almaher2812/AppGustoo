@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sobre nosotros</title>
+
+   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+            
+<header class="header">
+   <section class="flex">
+      <a href="menu_clientes.html" class="logo">APP GUSTO</a>
+      <nav class="navbar">
+         <a href="ini_clientes.html">Inicio</a>
+         <a href="about.html">Acerca de</a>
+         <a href="menu_clientes.html">Menú</a>
+         <a href="reserva_clientes.html">Reservaciones</a>
+         <a href="contact_clientes.html">Contacto</a>
+      </nav>
+      <div class="icons">
+         
+         <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+      <div class="profile">
+         <p class="name">nombre</p>
+         <div class="flex">
+            <a href="perfil.html" class="btn">perfil</a>
+            <a href="#" class="delete-btn">cerrar sesión</a>
+         </div>
+      </div>
+   </section>
+</header>   
+
+<div class="heading">
+   <h3>Sobre nosotros</h3>
+   <p><a href="menu_clientes.html">Inicio </a> <span> / Acerca de</span></p>
+</div>
+
+<section class="about">
+   <div class="row">
+      <div class="image">
+         <img src="images/about-img.svg" alt="">
+      </div>
+      <div class="content">
+         <h3>¿Por qué elegirnos?</h3>
+         <p>Descubre las razones por las cuales somos la mejor opción para satisfacer tus antojos culinarios. Nuestro menú variado, la calidad de nuestros ingredientes y nuestro servicio excepcional son solo algunas de las razones.</p>
+         <a href="menu_clientes.html" class="btn">Nuestro menú</a>
+      </div>
+   </div>
+</section>
+
+<section class="steps">
+   <h1 class="title">3 pasos simples</h1>
+   <div class="box-container">
+      <div class="box">
+         <img src="images/step-1.png" alt="">
+         <h3>Seleccionar comida</h3>
+         <p>Elige tus platillos favoritos de nuestro menú variado.</p>
+      </div>
+      <div class="box">
+         <img src="images/step-2.png" alt="">
+         <h3>Entrega en 30 minutos</h3>
+         <p>Recibe tu pedido en la puerta de tu hogar en tan solo 30 minutos.</p>
+      </div>
+      <div class="box">
+         <img src="images/step-3.png" alt="">
+         <h3>¡Disfrutar de la comida!</h3>
+         <p>Saborea tus deliciosos platillos y disfruta de una experiencia culinaria única.</p>
+      </div>
+   </div>
+</section>
+
+<section class="reviews">
+   <h1 class="title">Reseñas de clientes</h1>
+   <div class="swiper reviews-slider">
+      <div class="swiper-wrapper">
+         <div class="swiper-slide slide">
+            <img src="images/pic-1.png" alt="">
+            <p>La comida es deliciosa y el servicio es excelente. ¡Definitivamente volveré a ordenar aquí!</p>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Luisa Sánchez</h3>
+         </div>
+
+         <div class="swiper-slide slide">
+            <img src="images/pic-2.png" alt="">
+            <p>El ambiente es acogedor y la comida es fresca y deliciosa. Recomiendo el plato de pasta, ¡es increíble!</p>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Pablo Gómez</h3>
+         </div>
+
+         <div class="swiper-slide slide">
+            <img src="images/pic-3.png" alt="">
+            <p>La atención al cliente es excepcional y la comida llega siempre a tiempo. ¡Sin duda mi restaurante favorito!</p>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Marta Pérez</h3>
+         </div>
+      </div>
+      <div class="swiper-pagination"></div>
+   </div>
+</section>
+
+<footer class="footer">
+   <section class="box-container">
+      <!-- Contenido del footer -->
+   </section>
+   <div class="credit">&copy; derechos de autor @ 2022 por <span>web app gusto</span> | ¡todos los derechos reservados!</div>
+</footer>
+
+
+   <img src="images/loader.gif" alt="">
+</div>
+
+<script src="js/script.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   var swiper = new Swiper(".reviews-slider", {
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 20,
+      pagination: {
+         el: ".swiper-pagination",
+      },
+      breakpoints: {
+         550: {
+            slidesPerView: 1,
+         },
+         768: {
+            slidesPerView: 2,
+         },
+         1024: {
+            slidesPerView: 3,
+         },
+      },
+   });
+});
+</script>
+
+</body>
+</html>

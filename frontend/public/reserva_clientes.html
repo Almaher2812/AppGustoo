@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reservas</title>
+
+   <!-- Font Awesome CDN link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- Custom CSS file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      .reservation-container {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 20px;
+         border: 1px solid #ccc;
+         border-radius: 10px;
+         background-color: #f9f9f9;
+      }
+
+      .reservation-form {
+         font-size: 18px;
+      }
+
+      .form-group {
+         margin-bottom: 20px;
+      }
+
+      .form-group label {
+         display: block;
+         font-weight: bold;
+      }
+
+      .form-group select,
+      .form-group textarea,
+      .form-group input[type="submit"] {
+         width: 100%;
+         padding: 12px;
+         font-size: 18px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      .form-group input[type="submit"] {
+         display: block;
+         width: 100%;
+         background-color: #4CAF50;
+         color: white;
+         padding: 14px 20px;
+         margin: 8px 0;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         text-align: center;
+         font-size: 20px;
+      }
+      .form-group button {
+       padding: 10px 15px;
+       background-color: #a3da23;
+       color: white;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+    }
+    .form-group button:hover {
+       background-color: #0056b3;
+    }
+   </style>
+</head>
+<body>
+   
+<header class="header">
+   <section class="flex">
+      <a href="ini_clientes.html" class="logo">APP GUSTO</a>
+
+      <nav class="navbar">
+        <a href="ini_clientes.html">Inicio</a>
+        <a href="menu_clientes.html">Menu</a>
+        <a href="reserva_clientes.html">Reservaciones</a>
+        <a href="contact_clientes.html">Contacto</a>
+        <a href="about.html">Acerca de</a>
+      </nav>
+
+      <div class="icons">
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <p class="name">Shaikh Anas</p>
+         <div class="flex">
+            <a href="profile2.html" class="btn">Perfil</a>
+            <a href="#" class="delete-btn">Cerrar Sesión</a>
+         </div>
+      </div>
+   </section>
+</header>
+
+<div class="heading">
+   <h3>Reservas</h3>
+   <p><a href="menu_clientes.html">Inicio </a> <span>/ Reservaciones</span></p>
+</div>
+
+<section class="reservation-container">
+   <h1 class="title">Realizar Reserva</h1>
+
+   <form action="reserva.php" method="post" class="reservation-form">
+      <div class="form-group">
+         <label for="fecha">Fecha:</label>
+         <input type="date" id="fecha" name="fecha" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="hora">Hora:</label>
+         <input type="time" id="hora" name="hora" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="nombre">Nombre:</label>
+         <input type="text" id="nombre" name="nombre" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="numero">Número de Teléfono:</label>
+         <input type="tel" id="numero" name="numero" pattern="[0-9]{10}" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="personas">Número de Personas:</label>
+         <input type="number" id="personas" name="personas" min="1" required>
+      </div>
+      
+      <div class="form-group">
+         <label for="motivo">Motivo de la Reserva:</label>
+         <select id="motivo" name="motivo" required>
+            <option value="">Seleccione un motivo</option>
+            <option value="Cumpleaños">Cumpleaños</option>
+            <option value="Reunión Ejecutiva">Reunión Ejecutiva</option>
+            <option value="Reunión">Reunión</option>
+            <option value="Reunión">graduacion</option>
+            <option value="Otro">Otro</option>
+         </select>
+      </div>
+      
+      <div class="form-group">
+         <label for="explicacion">Explicación del Motivo:</label>
+         <textarea id="explicacion" name="explicacion" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="button">Enviar reserva</button>
+     </div>
+   </form>
+</section>
+
+<footer class="footer">
+   <section class="box-container">
+      <div class="box">
+         <img src="images/email-icon.png" alt="">
+         <h3>Nuestro Email</h3>
+         <a href="mailto:shaikhanas@gmail.com">alejandromateus2812@gmail.com</a>
+      </div>
+
+      <div class="box">
+         <img src="images/clock-icon.png" alt="">
+         <h3>Horario de Atención</h3>
+         <p>07am a 10pm </p>
+      </div>
+
+      <div class="box">
+         <img src="images/map-icon.png" alt="">
+         <h3>Nuestra Dirección</h3>
+         <a href="https://www.google.com/maps">Colombia </a>
+      </div>
+
+      <div class="box">
+         <img src="images/phone-icon.png" alt="">
+         <h3>Nuestro Número</h3>
+         <a href="tel:1234567890">310 2500664</a>
+      </div>
+   </section>
+
+   <div class="credit">&copy; Derechos de Autor @ 2022 por <span>Web App Gusto</span> | ¡Todos los Derechos Reservados!</div>
+</footer>
+
+
+   <img src="images/loader.gif" alt="">
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
