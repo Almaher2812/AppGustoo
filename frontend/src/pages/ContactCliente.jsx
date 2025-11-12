@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./style.css"; // Asegúrate de tener tu CSS original en src/pages o src/styles
+import "../css/style.css"; // Ruta corregida: css compartido en src/css
 
-const Menu_Cliente = () => {
+const Contact_Cliente = () => {
   const [profileVisible, setProfileVisible] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    number: "",
+    email: "",
+    msg: "",
+  });
 
   // Simula el loader
   useEffect(() => {
@@ -11,7 +17,7 @@ const Menu_Cliente = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Cierra el perfil si se hace clic fuera
+  // Cerrar perfil al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       const profile = document.getElementById("profile");
@@ -23,6 +29,16 @@ const Menu_Cliente = () => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // Manejo del formulario
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Mensaje enviado por ${formData.name}!`);
+  };
 
   if (loading) {
     return (
@@ -62,13 +78,13 @@ const Menu_Cliente = () => {
 
           {profileVisible && (
             <div className="profile" id="profile">
-              <p className="name">Nombre del Usuario</p>
+              <p className="name">shaikh anas</p>
               <div className="flex">
                 <a href="perfil.html" className="btn">
-                  Perfil
+                  profile
                 </a>
                 <a href="index.html" className="delete-btn">
-                  Cerrar sesión
+                  logout
                 </a>
               </div>
             </div>
@@ -77,34 +93,70 @@ const Menu_Cliente = () => {
       </header>
 
       <div className="heading">
-        <h3>Menu</h3>
+        <h3>Comunicate con nosotros</h3>
         <p>
-          <a href="ini_clientes.html">Volver</a> <span> / Inicio</span>
+          <a href="menu_clientes.html">home</a> <span> / contacto</span>
         </p>
       </div>
 
-      <section className="category">
-        <h1 className="title">Categorias</h1>
-        <div className="box-container">
-          <a href="comra_clientes.html" className="box">
-            <img src="images/cat-1.png" alt="Comidas rápidas" />
-            <h3>Comidas rápidas</h3>
-          </a>
+      <section className="contact">
+        <div className="row">
+          <div className="image">
+            <img src="images/contact-img.svg" alt="contacto" />
+          </div>
 
-          <a href="pf_clientes.html" className="box">
-            <img src="images/cat-2.png" alt="Platos Fuertes" />
-            <h3>Platos Fuertes</h3>
-          </a>
+          <form onSubmit={handleSubmit}>
+            <h3>¡Cuentanos de ti!</h3>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Ingresa tu nombre"
+              maxLength="50"
+              className="box"
+              value={formData.name}
+              onChange={handleChange}
+            />
 
-          <a href="bebidas.html" className="box">
-            <img src="images/cat-3.png" alt="Bebidas" />
-            <h3>Bebidas</h3>
-          </a>
+            <input
+              type="number"
+              name="number"
+              required
+              placeholder="Ingresa tu número"
+              className="box"
+              value={formData.number}
+              onChange={handleChange}
+              onInput={(e) => {
+                if (e.target.value.length > 10)
+                  e.target.value = e.target.value.slice(0, 10);
+              }}
+            />
 
-          <a href="post_clientes.html" className="box">
-            <img src="images/cat-4.png" alt="Postres" />
-            <h3>Postres</h3>
-          </a>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Ingresa tu correo"
+              maxLength="50"
+              className="box"
+              value={formData.email}
+              onChange={handleChange}
+            />
+
+            <textarea
+              name="msg"
+              placeholder="Escribe tu mensaje"
+              required
+              className="box"
+              cols="30"
+              rows="10"
+              maxLength="500"
+              value={formData.msg}
+              onChange={handleChange}
+            ></textarea>
+
+            <input type="submit" value="Enviar" className="btn" name="send" />
+          </form>
         </div>
       </section>
 
@@ -146,4 +198,4 @@ const Menu_Cliente = () => {
   );
 };
 
-export default Menu_Cliente;
+export default Contact_Cliente;

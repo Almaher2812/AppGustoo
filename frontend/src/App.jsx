@@ -1,31 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Importar las páginas
-import Ini_Cliente from "./pages/Ini_Cliente";
-import LogAdmin from "./pages/Log_Admin";
+import IniCliente from "./pages/IniCliente";
+import LogAdmin from "./pages/LogAdmin";
 import RegistroCliente from "./pages/RegistroCliente";
 import MenuCliente from "./pages/MenuCliente";
 import ContactCliente from "./pages/ContactCliente";
+import Home from "./pages/Home";
+import LogCliente from "./pages/LogCliente";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Página inicial del cliente */}
-        <Route path="/" element={<Ini_Cliente />} />
-
-        {/* Login de administrador */}
-        <Route path="/log_admin" element={<Log_Admin />} />
-
-        {/* Registro de cliente */}
-        <Route path="/registro_cliente" element={<Registro_Cliente />} />
-
-        {/* Menú del cliente */}
-        <Route path="/menu_cliente" element={<Menu_Cliente />} />
-
-        {/* Contacto del cliente */}
-        <Route path="/contact_cliente" element={<Contact_Cliente />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login-cliente" element={<LogCliente />} />
+        <Route path="/login-admin" element={<LogAdmin />} />
+        <Route path="/registro-cliente" element={<RegistroCliente />} />
+        <Route path="/menu-cliente" element={<MenuCliente />} />
+        <Route path="/contacto" element={<ContactCliente />} />
+        <Route path="/inicio-cliente" element={<IniCliente />} />
       </Routes>
     </Router>
   );

@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./style.css"; // Asegúrate de tener este CSS en la carpeta correcta
+import "../css/style.css"; // Ruta corregida: css compartido en src/css
 
-const Contact_Cliente = () => {
+const Menu_Cliente = () => {
   const [profileVisible, setProfileVisible] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [formData, setFormData] = useState({
-    name: "",
-    number: "",
-    email: "",
-    msg: "",
-  });
 
   // Simula el loader
   useEffect(() => {
@@ -17,7 +11,7 @@ const Contact_Cliente = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Cerrar perfil al hacer clic fuera
+  // Cierra el perfil si se hace clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       const profile = document.getElementById("profile");
@@ -29,16 +23,6 @@ const Contact_Cliente = () => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
-
-  // Manejo del formulario
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Mensaje enviado por ${formData.name}!`);
-  };
 
   if (loading) {
     return (
@@ -78,13 +62,13 @@ const Contact_Cliente = () => {
 
           {profileVisible && (
             <div className="profile" id="profile">
-              <p className="name">shaikh anas</p>
+              <p className="name">Nombre del Usuario</p>
               <div className="flex">
                 <a href="perfil.html" className="btn">
-                  profile
+                  Perfil
                 </a>
                 <a href="index.html" className="delete-btn">
-                  logout
+                  Cerrar sesión
                 </a>
               </div>
             </div>
@@ -93,70 +77,34 @@ const Contact_Cliente = () => {
       </header>
 
       <div className="heading">
-        <h3>Comunicate con nosotros</h3>
+        <h3>Menu</h3>
         <p>
-          <a href="menu_clientes.html">home</a> <span> / contacto</span>
+          <a href="ini_clientes.html">Volver</a> <span> / Inicio</span>
         </p>
       </div>
 
-      <section className="contact">
-        <div className="row">
-          <div className="image">
-            <img src="images/contact-img.svg" alt="contacto" />
-          </div>
+      <section className="category">
+        <h1 className="title">Categorias</h1>
+        <div className="box-container">
+          <a href="comra_clientes.html" className="box">
+            <img src="images/cat-1.png" alt="Comidas rápidas" />
+            <h3>Comidas rápidas</h3>
+          </a>
 
-          <form onSubmit={handleSubmit}>
-            <h3>¡Cuentanos de ti!</h3>
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Ingresa tu nombre"
-              maxLength="50"
-              className="box"
-              value={formData.name}
-              onChange={handleChange}
-            />
+          <a href="pf_clientes.html" className="box">
+            <img src="images/cat-2.png" alt="Platos Fuertes" />
+            <h3>Platos Fuertes</h3>
+          </a>
 
-            <input
-              type="number"
-              name="number"
-              required
-              placeholder="Ingresa tu número"
-              className="box"
-              value={formData.number}
-              onChange={handleChange}
-              onInput={(e) => {
-                if (e.target.value.length > 10)
-                  e.target.value = e.target.value.slice(0, 10);
-              }}
-            />
+          <a href="bebidas.html" className="box">
+            <img src="images/cat-3.png" alt="Bebidas" />
+            <h3>Bebidas</h3>
+          </a>
 
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Ingresa tu correo"
-              maxLength="50"
-              className="box"
-              value={formData.email}
-              onChange={handleChange}
-            />
-
-            <textarea
-              name="msg"
-              placeholder="Escribe tu mensaje"
-              required
-              className="box"
-              cols="30"
-              rows="10"
-              maxLength="500"
-              value={formData.msg}
-              onChange={handleChange}
-            ></textarea>
-
-            <input type="submit" value="Enviar" className="btn" name="send" />
-          </form>
+          <a href="post_clientes.html" className="box">
+            <img src="images/cat-4.png" alt="Postres" />
+            <h3>Postres</h3>
+          </a>
         </div>
       </section>
 
@@ -198,4 +146,4 @@ const Contact_Cliente = () => {
   );
 };
 
-export default Contact_Cliente;
+export default Menu_Cliente;
