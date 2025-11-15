@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "../css/style.css";
-import "https://unpkg.com/swiper@8/swiper-bundle.min.css";
 
-export default function Ini_Cliente() {
+export default function IniCliente() {
   useEffect(() => {
-    // Carga dinámica de Swiper
-    import("https://unpkg.com/swiper@8/swiper-bundle.min.js").then(() => {
+    // Cargar Swiper JS desde CDN
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/swiper@8/swiper-bundle.min.js";
+    script.onload = () => {
       new window.Swiper(".home-slider", {
         loop: true,
         grabCursor: true,
@@ -14,23 +15,28 @@ export default function Ini_Cliente() {
           clickable: true,
         },
       });
-    });
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
     <div>
-      {/* 🔹 Header */}
+      {/* Header */}
       <header className="header">
         <section className="flex">
-          <a href="/ini_cliente" className="logo">
+          <a href="/inicio-cliente" className="logo">
             APP GUSTO
           </a>
 
           <nav className="navbar">
-            <a href="/ini_cliente">Inicio</a>
-            <a href="/menu_cliente">Menú</a>
-            <a href="/reservas_cliente">Reservaciones</a>
-            <a href="/contact_cliente">Contacto</a>
+            <a href="/inicio-cliente">Inicio</a>
+            <a href="/menu-cliente">Menú</a>
+            <a href="/reservas-cliente">Reservaciones</a>
+            <a href="/contacto">Contacto</a>
           </nav>
 
           <div className="icons">
@@ -41,7 +47,7 @@ export default function Ini_Cliente() {
           <div className="profile" id="profile" style={{ display: "none" }}>
             <p className="name">Nombre del Cliente</p>
             <div className="flex">
-              <a href="/perfil_cliente" className="btn">
+              <a href="/perfil-cliente" className="btn">
                 Perfil
               </a>
               <a href="#" className="delete-btn">
@@ -52,7 +58,7 @@ export default function Ini_Cliente() {
         </section>
       </header>
 
-      {/* 🔹 Slider principal */}
+      {/* Slider principal */}
       <section className="home">
         <div className="swiper home-slider">
           <div className="swiper-wrapper">
@@ -60,9 +66,7 @@ export default function Ini_Cliente() {
               <div className="content">
                 <span>Bienvenido a</span>
                 <h3>APP GUSTO</h3>
-                <a href="/menu_cliente" className="btn">
-                  Ver menú
-                </a>
+                <a href="/menu-cliente" className="btn">Ver menú</a>
               </div>
               <div className="image">
                 <img src="/images/banner1.jpg" alt="banner1" />
@@ -73,20 +77,19 @@ export default function Ini_Cliente() {
               <div className="content">
                 <span>Prueba nuestros</span>
                 <h3>Sabores únicos</h3>
-                <a href="/menu_cliente" className="btn">
-                  Pedir ahora
-                </a>
+                <a href="/menu-cliente" className="btn">Pedir ahora</a>
               </div>
               <div className="image">
                 <img src="/images/banner2.jpg" alt="banner2" />
               </div>
             </div>
           </div>
+
           <div className="swiper-pagination"></div>
         </div>
       </section>
 
-      {/* 🔹 Sección de información */}
+      {/* Sección información */}
       <section className="about" id="about">
         <h1 className="heading">Sobre Nosotros</h1>
         <div className="row">
@@ -99,19 +102,16 @@ export default function Ini_Cliente() {
               En <strong>App Gusto</strong> combinamos la tecnología y la
               gastronomía para ofrecerte una experiencia deliciosa y práctica.
             </p>
-            <a href="/contact_cliente" className="btn">
-              Contáctanos
-            </a>
+            <a href="/contacto" className="btn">Contáctanos</a>
           </div>
         </div>
       </section>
 
-      {/* 🔹 Footer */}
+      {/* Footer */}
       <footer className="footer">
         <section>
           <div className="credit">
-            © {new Date().getFullYear()} <span>App Gusto</span> — Todos los
-            derechos reservados.
+            © {new Date().getFullYear()} <span>App Gusto</span> — Todos los derechos reservados.
           </div>
         </section>
       </footer>
